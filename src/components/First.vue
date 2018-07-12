@@ -15,6 +15,9 @@ export default {
       name: ''
     }
   },
+  mounted () {
+    this.name = this.getData(this.$parent).name
+  },
   methods: {
     done () {
       this.dispatch('completeStepOne', this.name)

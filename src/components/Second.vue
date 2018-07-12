@@ -8,6 +8,8 @@
     <label>Rum</label>
     <br>
     <button @click="done">done</button>
+    <br>
+    <button @click="back">back</button>
   </div>  
 </template>
 <script>
@@ -20,9 +22,15 @@ export default {
       drinks: []
     }
   },
+  mounted () {
+    this.drinks = this.getData(this.$parent).drinks
+  },
   methods: {
     done () {
       this.dispatch('completeStepTwo', this.drinks)
+    },
+    back () {
+      this.dispatch('goBack')
     }
   }
 }

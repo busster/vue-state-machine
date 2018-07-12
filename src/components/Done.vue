@@ -1,6 +1,8 @@
 <template>
   <div>
     {{ data }}
+    <br>
+    <button @click="back">back</button>
   </div>
 </template>
 <script>
@@ -15,6 +17,11 @@ export default {
   },
   mounted () {
     this.data = this.getData(this.$parent)
+  },
+  methods: {
+    back () {
+      this.dispatch('goBack')
+    }
   }
 }
 </script>

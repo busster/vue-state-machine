@@ -35,10 +35,16 @@ export default class Machine {
         completeStepTwo: (drinks) => {
           this._data.drinks = drinks
           this.changeStateTo('Done')
+        },
+        goBack: () => {
+          this.changeStateTo('First')
         }
       },
       'Done': {
-        route: 'Done'
+        route: 'Done',
+        goBack: () => {
+          this.changeStateTo('Second')
+        }
       }
     }
   }
